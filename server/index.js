@@ -12,7 +12,14 @@ const NoteModel = require('./models/Notes');
 const app = express();
 
 // Middleware setup
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://noteapp-amber.vercel.app"],
+        methods: ["POST", "GET", "PUT", "DELETE"],
+        credentials: true
+    }
+
+));
 
 // Parse incoming request bodies in JSON format
 app.use(express.json());
