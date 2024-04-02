@@ -11,7 +11,7 @@ function CreateNote() { // functional components
 
   const handleSubmit = (e) => { // handle form submission
     e.preventDefault(); // prevent default form submission behavior
-    axios.post("http://localhost:3001/createNote", { title, description })
+    axios.post("https://note-server-phi.vercel.app/createNote", { title, description })
       .then((result) => {
         console.log(result); // log the result to the console
         navigate("/note");
