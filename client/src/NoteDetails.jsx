@@ -12,7 +12,7 @@ function NoteDetails() { // functional components
   const [note, setNote] = useState(null); // initialize state variable for note, initially set to null
 
   useEffect(() => { // fetch note data
-    axios.get(`http://localhost:3001/getNote/${id}`) // fetch note data from the server based on the id
+    axios.get(`https://note-server-phi.vercel.app/getNote/${id}`) // fetch note data from the server based on the id
       .then((result) => setNote(result.data)) // set the fetched note data to the state variable
       .catch((err) => console.log(err));
   }, [id]);
