@@ -11,7 +11,7 @@ function UpdateNote () { // functional component
   const navigate = useNavigate();
 
   useEffect(() => { // fetch note data from the server based on the id
-    axios.get('http://localhost:3001/getNote/'+ id)
+    axios.get('https://note-server-phi.vercel.app/getNote/'+ id)
       .then((result) => {
         console.log(result); // log the result to the console
         setTitle(result.data.title); // set the fetched title to the state variable
@@ -22,7 +22,7 @@ function UpdateNote () { // functional component
 
   const Update = (e) => { // function to handle updating the note
     e.preventDefault(); // prevent default form submission behavior
-    axios.put('http://localhost:3001/updateNote/' + id, { title, description })
+    axios.put('https://note-server-phi.vercel.app/updateNote/' + id, { title, description })
       .then((result) => {
         console.log(result);
         navigate('/note');
