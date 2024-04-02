@@ -23,7 +23,7 @@ function NoteDetails() { // functional components
 
 
   const handleDeleteNote = () => { // function to handle deleting
-    axios.delete(`http://localhost:3001/deleteNote/${id}`)
+    axios.delete(`https://note-server-phi.vercel.app/deleteNote/${id}`)
       .then(() => {
         navigate("/note");
       })
