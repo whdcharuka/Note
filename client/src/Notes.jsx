@@ -10,7 +10,7 @@ function Notes() { // functional component
   const navigate = useNavigate();
 
   useEffect(() => { // fetch notes data from the server 
-    axios.get("http://localhost:3001")
+    axios.get("https://note-server-phi.vercel.app")
       .then((result) => setNotes(result.data)) // set the fetched notes data to the state variable
       .catch((err) => console.log(err)); 
   }, []); // empty array ensures the effect runs only once
